@@ -99,7 +99,7 @@ class RealEstateObject
                 {
                     type_of_service = m_type_of_service;
                     cout << "Тип услуги успешно изменен на:  " << type_of_service << endl;
-                    break;
+                    return;
                 }
             };
             cout << "Нет типа указанной услуги" << endl;
