@@ -80,10 +80,15 @@ class RealEstateObject
         void setAddress(int new_address)
         {
             address = new_address;
+            cout << "Вы изменили адрес. Новый адрес: "<< address << endl;
         }
         void setSquare(double new_square)
         {
-            if(new_square >= 0) square = new_square;
+            if(new_square >= 0)
+            {
+                square = new_square;
+                cout << "Вы раздвинули стены? Хорошо, новая площадь: " << square << endl;
+            }
             else cout << "Некорректное значение" << endl;
         }
         void setType(string m_type_of_service)
@@ -93,6 +98,7 @@ class RealEstateObject
                 if(types[i] == m_type_of_service)
                 {
                     type_of_service = m_type_of_service;
+                    cout << "Тип услуги успешно изменен на:  " << type_of_service << endl;
                     break;
                 }
             };
@@ -134,6 +140,7 @@ int main()
     RealEstateObject realty_1("ул. Пушкина, дом Колотушкина", 2, 10000, "Долгосрочная аренда");  // Создаем объект недвижимости 
     realty_1.printInfo();
     realty_1.setPrice(70000); // Пытаемся изменить цену на 70000
+    realty_1.setType("Продажа");
     realty_1.calculateProfitWithCommission(); // Рассчитываем и выводим прибыль с учетом комиссии
     return 0;
 }
